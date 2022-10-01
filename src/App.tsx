@@ -1,7 +1,7 @@
 import { Button, Flex, FormControl, FormLabel, Input, Stack, Text } from "@chakra-ui/react"
 import { SubmitHandler, useForm } from "react-hook-form";
 
-type Inputs = {
+interface Inputs {
   email: string,
   password: string,
   city: string,
@@ -9,7 +9,7 @@ type Inputs = {
 };
 
 function App() {
-  const { register, handleSubmit, watch, formState: { errors } } = useForm<Inputs>();
+  const { register, handleSubmit, formState: { errors } } = useForm<Inputs>();
   const onSubmit: SubmitHandler<Inputs> = data => console.log(data);
 
   return (
